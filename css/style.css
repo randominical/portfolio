@@ -560,11 +560,7 @@ body {
   margin: 0 5px 0 0;
 }
 
-.header__title .nobr {
-  white-space: nowrap;
-}
-
-.header__title .name {
+.header__title span {
   display: none;
 }
 
@@ -738,7 +734,7 @@ body {
     line-height: 100%;
   }
 
-  .header__title .name {
+  .header__title span {
     display: block;
     font-size: 12px;
   }
@@ -773,7 +769,7 @@ body {
     font-size: 24px;
   }
 
-  .header__title .name {
+  .header__title span {
     font-size: 14px;
   }
 
