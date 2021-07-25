@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -581,11 +581,9 @@ body {
 }
 
 .item {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-  -ms-grid-columns: 35% 10px 1fr;
-      grid-template: 1fr / 35% 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -594,13 +592,10 @@ body {
   margin: 0 0 20px 0;
 }
 
-.sites__item:last-child {
-  -ms-grid-rows: 1fr;
-  -ms-grid-columns: 1fr;
-      grid-template: 1fr / 1fr;
-}
-
 .item__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
   overflow: hidden;
   position: relative;
 }
@@ -617,9 +612,20 @@ body {
 
 .item__description {
   padding: 10px 10px 20px 0;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 10px;
+}
+
+.sites__item:last-child {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .item__lable {
@@ -640,27 +646,39 @@ body {
 .item__link {
   width: 120px;
   height: 25px;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: auto;
   font-size: 12px;
   color: red;
   text-transform: uppercase;
   border: 1px solid red;
   background-color: white;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .item__self {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: 'Roboto Mono', monospace;
   font-size: 18px;
   line-height: 130%;
@@ -795,15 +813,11 @@ body {
             column-gap: 20px;
   }
 
-
-
   .item__description {
     padding: 10px 10px 20px 0;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: minmax(26px, auto) 10px 1fr 10px 25px;
-    -ms-grid-columns: 1fr;
-        grid-template: minmax(26px, auto) 1fr 25px/1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     row-gap: 10px;
   }
 
@@ -845,12 +859,11 @@ body {
     margin: 0 0 40px 0;
   }
 }
-
-@media (min-width: 768px) {
+@media (hover: hover) and (pointer: fine) {
   .item__image:hover img {
-    -webkit-transition: width 5s linear;
-    -o-transition: width 5s linear;
-    transition: width 5s linear;
+    -webkit-transition: width 3s linear;
+    -o-transition: width 3s linear;
+    transition: width 3s linear;
     width: 130%;
   }
 
@@ -864,24 +877,26 @@ body {
   }
 }
 
-@media (min-width: 951px) {
+@media (min-width: 1135px) {
   .section__body {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-column-gap: 30px;
-       -moz-column-gap: 30px;
-            column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
     row-gap: 30px;
   }
 
   .item {
-    -ms-grid-rows: 1fr;
-    -ms-grid-columns: 26% 1fr;
-        grid-template: 1fr / 26% 1fr;
-    margin: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 520px;
+            flex: 0 1 520px;
   }
 }
 
