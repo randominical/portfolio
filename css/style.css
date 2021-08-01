@@ -692,6 +692,32 @@ body {
   margin: 0 0 30px 0;
 }
 
+.item-hidden {
+  display: none;
+}
+
+.button-more {
+  width: 250px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  color: red;
+  text-transform: uppercase;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  margin: 30px auto 0 auto;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -847,6 +873,13 @@ body {
     font-size: 100px;
   }
 
+  .button-more {
+    width: 300px;
+    height: 40px;
+    font-size: 22px;
+    margin: 50px auto 0 auto;
+  }
+
   .footer__link {
     font-size: 16px;
   }
@@ -904,6 +937,12 @@ body {
   .item__link:hover {
     color: white;
     background-color: red;
+  }
+
+
+  .button-more:hover {
+    color: white;
+    background: red;
   }
 
   .footer__link:hover {
